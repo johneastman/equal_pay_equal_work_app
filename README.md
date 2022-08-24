@@ -17,6 +17,7 @@ This project is a Ruby on Rails application that aims to provide an easy-to-use 
 
 ## Sources
 [1] https://leg.colorado.gov/bills/sb19-085
+
 [2] https://cdle.colorado.gov/equalpaytransparency
 
 ## License
