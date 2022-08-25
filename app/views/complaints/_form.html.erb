@@ -1,0 +1,12 @@
+<%= form_with model: contact, url: complaint_path, method: :patch  do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+
+    <%= f.label :mailing_address %>
+    <%= f.text_field :mailing_address %>
+
+    <%= f.submit %>
+<% end %>

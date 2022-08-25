@@ -1,9 +1,7 @@
 <h1>Complaints</h1>
 <ul>
-<% @contact_info.each do |c| %>
-    <li>
-    <p><%= c.first_name %> <%= c.last_name %></p>
-    <p><%= c.mailing_address %></p>
-    </li>
+<% @contacts.each do |contact| %>
+    <li><%= render "address", contact: contact %></li>
+    <p><%= link_to "View Details", complaint_path(contact) %></p>
 <% end %>
 </ul>
