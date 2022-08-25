@@ -1,6 +1,6 @@
 <h1>Complaint Details</h1>
-<%= render "address", contact: @contact %>
+<%= render "display", complaint: @complaint %>
 <p>
     <%= link_to "Back", complaints_path %>
-    <%= link_to "Edit", edit_complaint_path(@contact) %>
+    <%= link_to "Edit", edit_complaint_path(@complaint) %>
 </p>

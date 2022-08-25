@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_202818) do
-  create_table "contact_infos", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "mailing_address"
+ActiveRecord::Schema[7.0].define(version: 2022_08_25_232217) do
+  create_table "complaints", force: :cascade do |t|
+    t.boolean "promotional_opportunities"
+    t.text "promotional_opportunities_description"
+    t.boolean "compensation"
+    t.text "compensation_description"
+    t.boolean "history"
+    t.text "history_description"
+    t.text "supporting_documentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end

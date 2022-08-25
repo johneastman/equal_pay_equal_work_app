@@ -1,7 +1,6 @@
 <h1>Complaints</h1>
 <ul>
-<% @contacts.each do |contact| %>
-    <li><%= render "address", contact: contact %></li>
-    <p><%= link_to "View Details", complaint_path(contact) %></p>
+<% @complaints.each do |complaint| %>
+    <li><%= link_to "Complaint ##{complaint.id}", complaint_path(complaint) %></li>
 <% end %>
 </ul>

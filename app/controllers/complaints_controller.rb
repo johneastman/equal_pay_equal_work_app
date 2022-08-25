@@ -1,26 +1,42 @@
 class ComplaintsController < ApplicationController
     def index
-        @contacts = ContactInfo.all
+        @complaints = Complaint.all
     end
 
     def show
-        @contact = ContactInfo.find(params[:id])
+        @complaint = Complaint.find(params[:id])
     end
 
     def edit
-        @contact_info = ContactInfo.find(params[:id])
+        @complaint = Complaint.find(params[:id])
     end
 
     def update
-        @contact = ContactInfo.find(params[:id])
-
-        @contact.update(contact_params)
-        redirect_to complaint_path(@contact)
+        @complaint = Complaint.find(params[:id])
+        @complaint.update(complaint_params)
+        redirect_to complaint_path
     end
 
-    private
+    def new
+        @complaint = Complaint.new
+    end
 
-    def contact_params
-        params.require(:contact_info).permit(:first_name, :last_name, :mailing_address)
+    def create
+        @complaint = Complaint.create(complaint_params)
+        redirect_to complaints_path
+    end
+
+    private 
+
+    def complaint_params
+        params.require(:complaint).permit(
+            :promotional_opportunities,
+            :promotional_opportunities_description,
+            :compensation,
+            :compensation_description,
+            :history,
+            :history_description,
+            :supporting_documentation
+        )
     end
 end
