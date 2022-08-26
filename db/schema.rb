@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_232217) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_26_225807) do
   create_table "complaints", force: :cascade do |t|
     t.boolean "promotional_opportunities"
     t.text "promotional_opportunities_description"
@@ -21,5 +21,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_232217) do
     t.text "supporting_documentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "employer_id", null: false
+    t.index ["employer_id"], name: "index_complaints_on_employer_id"
   end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "name"
+    t.string "contact_person_name"
+    t.string "mailing_address"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.string "phone_number"
+    t.string "email_address"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "complaints", "employers"
 end

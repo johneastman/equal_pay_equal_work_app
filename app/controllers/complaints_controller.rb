@@ -1,48 +1,56 @@
 class ComplaintsController < ApplicationController
-    def index
-        @complaints = Complaint.all
-    end
 
-    def show
-        @complaint = Complaint.find(params[:id])
-    end
+	before_action :set_employer
 
-    def edit
-        @complaint = Complaint.find(params[:id])
-    end
+	def index
+		@complaints = @employer.complaints
+	end
 
-    def update
-        @complaint = Complaint.find(params[:id])
-        @complaint.update(complaint_params)
-        redirect_to complaint_path
-    end
+	def show
+		@complaint = @employer.complaints.find(params[:id])
+	end
 
-    def new
-        @complaint = Complaint.new
-    end
+	def edit
+		@complaint = Complaint.find(params[:id])
+	end
 
-    def create
-        @complaint = Complaint.create(complaint_params)
-        redirect_to complaints_path
-    end
+	def update
+		@complaint = Complaint.find(params[:id])
+		@complaint.update(complaint_params)
+		redirect_to employer_complaint_path(@employer, @complaint)
+	end
 
-    def destroy
-        @complaint = Complaint.find(params[:id])
-        @complaint.destroy
-        redirect_to complaints_path, status: :see_other
-    end
+	def new
+		@complaint = Complaint.new
+	end
 
-    private 
+	def create
+		complaint = @employer.complaints.new(complaint_params)
+		complaint.save
+		redirect_to employer_complaint_path(@employer, complaint)
+	end
 
-    def complaint_params
-        params.require(:complaint).permit(
-            :promotional_opportunities,
-            :promotional_opportunities_description,
-            :compensation,
-            :compensation_description,
-            :history,
-            :history_description,
-            :supporting_documentation
-        )
-    end
+	def destroy
+		@complaint = Complaint.find(params[:id])
+		@complaint.destroy
+		redirect_to employer_complaints_path(@employer), status: :see_other
+	end
+
+	private 
+
+	def complaint_params
+		params.require(:complaint).permit(
+				:promotional_opportunities,
+				:promotional_opportunities_description,
+				:compensation,
+				:compensation_description,
+				:history,
+				:history_description,
+				:supporting_documentation
+		)
+	end
+
+	def set_employer
+		@employer = Employer.find(params[:employer_id])
+	end
 end

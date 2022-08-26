@@ -1,7 +1,9 @@
-<h1>Complaints</h1>
-<%= link_to "Create Complaint", new_complaint_path %>
+<h1>Complaints for <%= @employer.name %></h1>
+<h2><%= link_to "File a Complaint", new_employer_complaint_path %></h2>
 <ul>
 <% @complaints.each do |complaint| %>
-    <li><%= link_to "Complaint ##{complaint.id}", complaint_path(complaint) %></li>
+    <li><%= link_to "Complaint ##{complaint.id}", employer_complaint_path(@employer, complaint) %></li>
 <% end %>
 </ul>
+
+<%= link_to "Back", employer_path(@employer) %>

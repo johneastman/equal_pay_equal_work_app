@@ -1,0 +1,8 @@
+<h1>Employers</h1>
+<ul>
+	<% @employers.each do |e| %>
+		<li>
+			<%= link_to e.name, employer_path(e) %>
+		</li>
+	<% end %>
+</ul>
