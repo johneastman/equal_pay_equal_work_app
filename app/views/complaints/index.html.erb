@@ -1,4 +1,5 @@
 <h1>Complaints</h1>
+<%= link_to "Create Complaint", new_complaint_path %>
 <ul>
 <% @complaints.each do |complaint| %>
     <li><%= link_to "Complaint ##{complaint.id}", complaint_path(complaint) %></li>

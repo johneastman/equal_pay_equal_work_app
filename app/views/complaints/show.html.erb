@@ -3,4 +3,7 @@
 <p>
     <%= link_to "Back", complaints_path %>
     <%= link_to "Edit", edit_complaint_path(@complaint) %>
+    <%= link_to "Delete", complaint_path, 
+                data: {turbo_method: :delete,
+                       turbo_confirm: "Are you sure you want to delete this complaint?" }%>
 </p>

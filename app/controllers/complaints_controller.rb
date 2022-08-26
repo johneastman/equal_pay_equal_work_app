@@ -26,6 +26,12 @@ class ComplaintsController < ApplicationController
         redirect_to complaints_path
     end
 
+    def destroy
+        @complaint = Complaint.find(params[:id])
+        @complaint.destroy
+        redirect_to complaints_path, status: :see_other
+    end
+
     private 
 
     def complaint_params
