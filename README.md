@@ -15,6 +15,11 @@ This project is a Ruby on Rails application that aims to provide an easy-to-use 
     * Consider automatically emailing form to State of Colorado?
     * Provide options to download/print/email form
 
+
+## Misc
+* Complaint form: https://cdle.colorado.gov/sites/cdle/files/Equal%20Pay%20Complaint%20Form%20Dec%202020_Distributed.pdf
+* Faker: https://github.com/faker-ruby/faker
+
 ## Sources
 [1] https://leg.colorado.gov/bills/sb19-085
 
