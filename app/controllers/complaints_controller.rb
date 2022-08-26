@@ -2,10 +2,6 @@ class ComplaintsController < ApplicationController
 
 	before_action :set_employer
 
-	def index
-		@complaints = @employer.complaints
-	end
-
 	def show
 		@complaint = @employer.complaints.find(params[:id])
 	end

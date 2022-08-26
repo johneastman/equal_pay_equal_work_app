@@ -1,4 +1,4 @@
-<h1>Complaint Details</h1>
+<h1>Details for Complaint #<%= @complaint.id %> (<%= @employer.name %>)</h1>
 <%= render "display", complaint: @complaint %>
 <p>
     <%= link_to "Back", employer_path(@employer) %>
