@@ -36,13 +36,13 @@ class ComplaintsController < ApplicationController
 
 	def complaint_params
 		params.require(:complaint).permit(
-				:promotional_opportunities,
-				:promotional_opportunities_description,
-				:compensation,
-				:compensation_description,
-				:history,
-				:history_description,
-				:supporting_documentation
+			:promotional_opportunities,
+			:promotional_opportunities_description,
+			:compensation,
+			:compensation_description,
+			:history,
+			:history_description,
+			:supporting_documentation
 		)
 	end
 

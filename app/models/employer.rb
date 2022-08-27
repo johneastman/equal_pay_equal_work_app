@@ -1,3 +1,3 @@
 class Employer < ApplicationRecord
-    has_many :complaints
+	has_many :complaints
 end
