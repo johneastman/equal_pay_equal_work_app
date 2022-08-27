@@ -1,0 +1,48 @@
+<%= form_with(model: employer) do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :contact_person_name %>
+		<%= f.text_field :contact_person_name %>
+	</p>
+
+	<p>
+		<%= f.label :mailing_address %>
+		<%= f.text_field :mailing_address %>
+	</p>
+
+	<p>
+		<%= f.label :city %>
+		<%= f.text_field :city %>
+	</p>
+
+	<p>
+		<%= f.label :state %>
+		<%= f.text_field :state %>
+	</p>
+
+	<p>
+		<%= f.label :zipcode %>
+		<%= f.text_field :zipcode %>
+	</p>
+
+	<p>
+		<%= f.label :phone_number %>
+		<%= f.text_field :phone_number %>
+	</p>
+
+	<p>
+		<%= f.label :email_address %>
+		<%= f.text_field :email_address %>
+	</p>
+
+	<p>
+		<%= f.label :website %>
+		<%= f.text_field :website %>
+	</p>
+
+	<p><%= f.submit %></p>
+<% end %>

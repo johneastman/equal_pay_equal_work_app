@@ -1,1 +1,3 @@
 <%= render "form", complaint: @complaint, employer: @employer %>
+
+<p><%= render "shared/redirect", back_url: employer_path(@employer) %></p>

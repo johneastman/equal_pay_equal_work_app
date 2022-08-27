@@ -1,9 +1,9 @@
 <h1>Details for Complaint #<%= @complaint.id %> (<%= @employer.name %>)</h1>
 <%= render "display", complaint: @complaint %>
 <p>
-    <%= link_to "Back", employer_path(@employer) %>
-    <%= link_to "Edit", edit_employer_complaint_path(@employer, @complaint) %>
-    <%= link_to "Delete", employer_complaint_path(@employer, @complaint), 
-                data: {turbo_method: :delete,
-                       turbo_confirm: "Are you sure you want to delete this complaint?" }%>
+	<%= render "shared/redirect", employer_path(@employer) %>
+  <%= link_to "Edit", edit_employer_complaint_path(@employer, @complaint) %>
+	<%= link_to "Delete", employer_complaint_path(@employer, @complaint), 
+							data: {turbo_method: :delete,
+										 turbo_confirm: "Are you sure you want to delete this complaint?" }%>
 </p>
