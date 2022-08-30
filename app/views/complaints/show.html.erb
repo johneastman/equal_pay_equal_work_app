@@ -1,7 +1,7 @@
 <h1>Details for Complaint #<%= @complaint.id %> (<%= @employer.name %>)</h1>
 <%= render "display", complaint: @complaint %>
 <p>
-	<%= render "shared/redirect", employer_path(@employer) %>
+	<%= render "shared/redirect", back_url: employer_path(@employer) %>
   <%= link_to "Edit", edit_employer_complaint_path(@employer, @complaint) %>
 	<%= link_to "Delete", employer_complaint_path(@employer, @complaint), 
 							data: {turbo_method: :delete,

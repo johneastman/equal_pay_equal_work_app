@@ -1,10 +1,7 @@
 <h1>Employers</h1>
-<ul>
-	<% @employers.each do |employer| %>
-		<li>
-			<%= link_to employer.name, employer_path(employer) %> (<%= link_to "edit", edit_employer_path(employer) %>)
-		</li>
-	<% end %>
-
-	<li><%= link_to "Create New Employer", new_employer_path %></li>
-</ul>
+<% @employers.each do |employer| %>
+	<section>
+		<%= link_to employer.name, employer_path(employer) %> (<%= link_to "edit", edit_employer_path(employer) %>)
+	</section>
+<% end %>
+<%= link_to "Create New Employer", new_employer_path %>

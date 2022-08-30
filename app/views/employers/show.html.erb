@@ -1,7 +1,7 @@
 <h1><%= @employer.name %></h1>
 <h2><%= link_to "File a Complaint", new_employer_complaint_path(@employer) %></h2>
 
-<p><strong>Contact Person Name:</strong><%= @employer.contact_person_name %></p>
+<p><strong>Contact Person Name:</strong> <%= @employer.contact_person_name %></p>
 
 <p><strong>Address</strong></p>
 <p><%= @employer.mailing_address %></p>
@@ -19,5 +19,5 @@
 </ul>
 
 <p>
-  <%= render "shared/redirect", employers_path %>
+  <%= render "shared/redirect", back_url: employers_path %>
 </p>
