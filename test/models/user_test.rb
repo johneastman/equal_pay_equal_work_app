@@ -1,7 +1,10 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "email should be unique" do
+    user = User.new(email: "email@example.com")
+    user.save
+    
+    assert_not User.new(email: "email@example.com").save
+  end
 end
