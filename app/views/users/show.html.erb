@@ -1,0 +1,8 @@
+<%= render "show_user", user: @user %>
+<p>
+  <%= render "shared/redirect", back_url: users_path %>
+  <%= link_to "Edit", edit_user_path(@user) %>
+  <%= link_to "Delete", @user,
+              data: {turbo_method: :delete,
+										 turbo_confirm: "Are you sure you want to delete this complaint?" } %>
+</p>

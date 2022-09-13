@@ -1,0 +1,11 @@
+<strong>Name:</strong> <%= user.first_name %> <%= user.last_name %>
+<br/>
+<strong>Address:</strong> <%= user.mailing_address %>, <%= user.city %> <%= user.state %>, <%= user.zipcode %>
+<br/>
+<strong>Primary Phone:</strong> <%= user.primary_phone %>
+<br/>
+<strong>Alternate Phone:</strong> <%= user.alt_phone %>
+<br/>
+<strong>Email:</strong> <%= mail_to(user.email) %>
+<br/>
+<strong>Preferred Contact Method:</strong> <%= user.preferred_contact %>
