@@ -1,4 +1,18 @@
 <%= form_with(model: user) do |f| %>
+
+  <h3>Login Info</h3>
+
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+
+  <p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+  <h3>Personal Contact Info</h3>
 	<p>
 		<%= f.label :first_name %>
 		<%= f.text_field :first_name %>
@@ -37,11 +51,6 @@
   <p>
 		<%= f.label :alt_phone %>
 		<%= f.text_field :alt_phone %>
-	</p>
-
-	<p>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
 	</p>
 
 	<p>

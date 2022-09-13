@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :employers do
     resources :complaints
   end
+
+  resource :session, only: [:new, :create, :destroy]
+  get "signin" => "sessions#new"
 end
