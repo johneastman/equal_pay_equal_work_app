@@ -1,3 +1,65 @@
 <h1>Edit User</h1>
-<%= render "form", user: @user %>
+<%= form_with(model: @user) do |f| %>
+
+  <h3>Login Info</h3>
+
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+
+  <p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+  <h3>Personal Contact Info</h3>
+	<p>
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+	</p>
+
+	<p>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+	</p>
+
+	<p>
+		<%= f.label :mailing_address %>
+		<%= f.text_field :mailing_address %>
+	</p>
+
+	<p>
+		<%= f.label :city %>
+		<%= f.text_field :city %>
+	</p>
+
+	<p>
+		<%= f.label :state %>
+		<%= f.text_field :state %>
+	</p>
+
+	<p>
+		<%= f.label :zipcode %>
+		<%= f.text_field :zipcode %>
+	</p>
+
+	<p>
+		<%= f.label :primary_phone %>
+		<%= f.text_field :primary_phone %>
+	</p>
+
+  <p>
+		<%= f.label :alt_phone %>
+		<%= f.text_field :alt_phone %>
+	</p>
+
+	<p>
+		<%= f.label :preferred_contact %>
+		<%= f.select :preferred_contact, ["Mail", "Phone", "Email"] %>
+	</p>
+
+	<p><%= f.submit %></p>
+<% end %>
+
 <%= render "shared/redirect", back_url: @user %>

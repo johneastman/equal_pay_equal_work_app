@@ -2,7 +2,6 @@
 <% @users.each do |user| %>
   <p>
     <%= render "show_user", user: user %>
-    <br/>
     <%= link_to "Details", user %>
   </p>
 <% end %>

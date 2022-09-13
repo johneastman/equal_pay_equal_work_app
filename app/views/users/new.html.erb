@@ -1,5 +1,17 @@
 <h1>Sign Up</h1>
-<%= render "form", user: @user %>
+<%= form_with(model: @user) do |f| %>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+
+  <p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+	<p><%= f.submit "Sign up" %></p>
+<% end %>
 
 <p>
   <%= render "shared/redirect", back_url: request.referrer %>

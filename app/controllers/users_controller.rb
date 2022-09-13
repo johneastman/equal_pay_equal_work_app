@@ -12,9 +12,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-		user.save
-    redirect_to user
+    # When the user creates an account, they only have to provide an email and password. The remaining contact info is optional
+    # because they may want to only submit anonymous forms. If they do decide to submit non-anonymous forms, they will need ti
+    # edit/add this info.
+    user = User.new(params.require(:user).permit(:email, :password))
+    user.preferred_contact = "Email" # The email is required for login, so this value should initially be set to "Email" 
+		if user.save
+      sign_in(user.id)
+      redirect_to user
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -30,6 +38,7 @@ class UsersController < ApplicationController
   def destroy
 		@user = User.find(params[:id])
 		@user.destroy
+    sign_out
 		redirect_to users_path, status: :see_other
 	end
 
@@ -46,7 +55,8 @@ class UsersController < ApplicationController
 			:primary_phone,
       :alt_phone,
 			:email,
-			:preferred_contact
+			:preferred_contact,
+      :password
 		)
   end
 end
