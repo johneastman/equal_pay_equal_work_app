@@ -64,6 +64,7 @@ User.create(
 	zipcode: Faker::Address.zip,
 	primary_phone: Faker::PhoneNumber.phone_number,
 	alt_phone: Faker::PhoneNumber.phone_number,
-	email: Faker::Internet.email,
-	preferred_contact: ["Mail", "Phone", "Email"].sample
+	email: "test_user@example.com",
+	preferred_contact: ["Mail", "Phone", "Email"].sample,
+	password: "1234"
 )

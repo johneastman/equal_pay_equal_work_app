@@ -1,5 +1,5 @@
 <h1>Details for Complaint #<%= @complaint.id %> (<%= @employer.name %>)</h1>
-<h3><%= link_to "Generate Complaint", employer_generate_complaint_path, download: :file %></h3>
+<h3><%= link_to "Generate Complaint", employer_generate_complaint_path, target: "_blank" %></h3>
 <%= render "display", complaint: @complaint %>
 <p>
 	<%= render "shared/redirect", back_url: employer_path(@employer) %>
