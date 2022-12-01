@@ -1,8 +1,9 @@
 module ApplicationHelper
-  def welcome_display
+  
+  def welcome_display(user)
     message = "Welcome"
-    if !current_user.nil? && current_user.first_name.present?
-      message += ", #{current_user.first_name}!"
+    if !user.nil? && user.first_name.present?
+      message += ", #{user.first_name}!"
     else
       message += "!"
     end

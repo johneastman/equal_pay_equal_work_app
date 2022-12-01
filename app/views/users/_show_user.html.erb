@@ -1,4 +1,4 @@
-<%= display_info("Name", [user.first_name, user.last_name]) %>
+<%= display_info("Name", [user.first_name, user.last_name], sep=" ") %>
 <!-- email will always be defined because it is required for sign up, so it doesn't need to be passed to 'display_info' -->
 <strong>Email:</strong> <%= mail_to(user.email) %>
 <br/>
