@@ -11,11 +11,15 @@
   </head>
 
   <header>
-    <%= render "layouts/header" %>
+    <div id="menu">
+      <%= render "layouts/header" %>
+    </div>
   </header>
 
   <body>
     <%= render "layouts/flash" %>
-    <%= yield %>
+    <div id="main-body">
+      <%= yield %>
+    </div>
   </body>
 </html>

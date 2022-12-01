@@ -1,16 +1,10 @@
-<% if current_user.nil? %>
-  <ul>
+<ul>
+  <li><strong><%= welcome_display() %></strong> | </li>
+  <% if current_user.nil? %>
     <li><%= link_to "Sign Up", new_user_path %></li>
     <li><%= link_to "Sign In", signin_path %></li>
-  </ul>
-<% else %>
-  <% if current_user.first_name.present? %>
-    <h1>Welcome <%= current_user.first_name %></h1>
   <% else %>
-    <h1>Welcome</h1>
-  <% end %>
-  <ul>
-    <li><%= link_to "Edit Account", edit_user_path(current_user) %></li>
+    <li><%= link_to "View Account", user_path(current_user) %></li>
     <li><%= link_to "Sign Out", session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to sign out?" } %></li>
-  </ul>
-<% end %>
+  <% end %>
+</ul>
