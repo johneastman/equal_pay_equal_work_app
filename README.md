@@ -34,18 +34,6 @@ Users can also file their own complaints.
 Finally, after a complaint has been created, users can generate the PDF form with the complaint and user data.
 ![complaint pdf popilated](/readme_images/generated_pdf.png)
 
-## Design Nodes and Ideas
-* Allow the user to fill out the form anonymously or not
-* Add form fields for each field in the complaint form
-    * If possible, split web interface into multiple sections/pages (select "next" after each section).
-* Generate and download the PDF with the information provided filled out in the form.
-    * Consider automatically emailing form to State of Colorado?
-    * Provide options to download/print/email form
-
-## Misc
-* Complaint form: https://cdle.colorado.gov/sites/cdle/files/Equal%20Pay%20Complaint%20Form%20Dec%202020_Distributed.pdf
-* Faker: https://github.com/faker-ruby/faker
-
 ## Sources
 [1] https://leg.colorado.gov/bills/sb19-085
 
