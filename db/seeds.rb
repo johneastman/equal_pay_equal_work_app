@@ -11,6 +11,20 @@ def get_paragraphs
 	Faker::Lorem.paragraphs(number: 2).join("\n\n")
 end
 
+user = User.create(
+	first_name: Faker::Name.first_name,
+	last_name: Faker::Name.last_name,
+	mailing_address: Faker::Address.street_address,
+	city: Faker::Address.city,
+	state: Faker::Address.state_abbr,
+	zipcode: Faker::Address.zip,
+	primary_phone: Faker::PhoneNumber.phone_number,
+	alt_phone: Faker::PhoneNumber.phone_number,
+	email: "test_user@example.com",
+	preferred_contact: ["Mail", "Phone", "Email"].sample,
+	password: "1234"
+)
+
 3.times do |n|
   employer = Employer.create(
 		name: Faker::Company.name,
@@ -50,21 +64,8 @@ end
 		end
 
 		complaint.employer = employer
+		complaint.user = user
 
 		complaint.save
 	end
 end
-
-User.create(
-	first_name: Faker::Name.first_name,
-	last_name: Faker::Name.last_name,
-	mailing_address: Faker::Address.street_address,
-	city: Faker::Address.city,
-	state: Faker::Address.state_abbr,
-	zipcode: Faker::Address.zip,
-	primary_phone: Faker::PhoneNumber.phone_number,
-	alt_phone: Faker::PhoneNumber.phone_number,
-	email: "test_user@example.com",
-	preferred_contact: ["Mail", "Phone", "Email"].sample,
-	password: "1234"
-)

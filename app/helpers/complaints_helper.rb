@@ -5,4 +5,8 @@ module ComplaintsHelper
     end
     "No"
   end
+
+  def users_complaint?(current_user, complaint_user)
+    return !current_user.nil? && current_user == complaint_user
+  end
 end

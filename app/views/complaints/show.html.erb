@@ -9,8 +9,10 @@
 <%= render "display", complaint: @complaint %>
 <p>
 	<%= render "shared/redirect", back_url: employer_path(@employer) %>
-  <%= link_to "Edit", edit_employer_complaint_path(@employer, @complaint) %>
-	<%= link_to "Delete", employer_complaint_path(@employer, @complaint), 
-							data: {turbo_method: :delete,
-										 turbo_confirm: "Are you sure you want to delete this complaint?" }%>
+	<% if users_complaint?(current_user, @complaint.user) %>
+	  <%= link_to "Edit", edit_employer_complaint_path(@employer, @complaint) %>
+		<%= link_to "Delete", employer_complaint_path(@employer, @complaint), 
+								data: {turbo_method: :delete,
+										 	 turbo_confirm: "Are you sure you want to delete this complaint?" }%>
+	<% end %>
 </p>
