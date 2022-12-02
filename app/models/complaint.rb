@@ -1,6 +1,3 @@
 class Complaint < ApplicationRecord
-	belongs_to :employer
-	belongs_to :user
-
-	validates :user, presence: true
+	# belongs_to :employer, through: :user_reference
 end

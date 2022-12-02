@@ -63,9 +63,12 @@ user = User.create(
 			complaint.supporting_documentation = get_paragraphs
 		end
 
-		complaint.employer = employer
-		complaint.user = user
-
 		complaint.save
+
+		user_ref = UserReference.create(
+			user: user,
+			employer: employer,
+			complaint: complaint
+		)
 	end
 end

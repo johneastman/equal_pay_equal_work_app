@@ -2,11 +2,11 @@ require "fillable-pdf"
 
 class ComplaintsController < ApplicationController
 
-	before_action :set_employer
+	before_action :set_employer, except: [:index]
 	before_action :require_signin, only: [:generate_complaint, :new]
 
 	def show
-		@complaint = @employer.complaints.find(params[:id])
+		@complaint = UserReference.user_employer_complaint(current_user, @employer, params[:id])
 	end
 
 	def edit
@@ -25,8 +25,14 @@ class ComplaintsController < ApplicationController
 
 	def create
 		complaint = @employer.complaints.new(complaint_params)
-		complaint.user = current_user
 		complaint.save
+
+		user_ref = UserReference.new
+		user_ref.user = current_user
+		user_ref.employer = @employer
+		user_ref.complaint = complaint
+		user_ref.save
+
 		redirect_to employer_complaint_path(@employer, complaint)
 	end
 

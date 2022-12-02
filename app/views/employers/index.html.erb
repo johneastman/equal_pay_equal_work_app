@@ -1,7 +1,7 @@
 <h1>Employers</h1>
 <% @employers.each do |employer| %>
 	<section>
-		<%= link_to employer.name, employer_path(employer) %> (<%= link_to "edit", edit_employer_path(employer) %>)
+		<%= link_to employer.name, employer_path(employer) %> (<%= link_to "File Complaint", new_employer_path(employer_id: employer.id) %>)
 	</section>
 <% end %>
-<%= link_to "Create New Employer", new_employer_path %>
+<%= link_to "File Complaint Against New Employer", new_employer_path(employer_id: nil) %>
