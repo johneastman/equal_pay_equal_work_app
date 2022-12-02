@@ -6,6 +6,9 @@ The State of Colorado passed the Equal Pay For Equal Work Act [1] in 2019, which
 ## Description
 This project is a Ruby on Rails application that aims to provide an easy-to-use web interface to filling out Equal Pay for Equal Work complaint forms.
 
+### Design Notes
+Notes specific to design and impementation considerations can be found in the [wiki](https://github.com/johneastman/equal_pay_equal_work_app/wiki).
+
 ### Overview
 Note that the application is currently a prototype, so the screenshots below do not reflect the final version of the user interface.
 
@@ -35,9 +38,8 @@ Finally, after a complaint has been created, users can generate the PDF form wit
 ![complaint pdf popilated](/readme_images/generated_pdf.png)
 
 ## Sources
-[1] https://leg.colorado.gov/bills/sb19-085
-
-[2] https://cdle.colorado.gov/equalpaytransparency
+1. https://leg.colorado.gov/bills/sb19-085
+2. https://cdle.colorado.gov/equalpaytransparency
 
 ## License
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
