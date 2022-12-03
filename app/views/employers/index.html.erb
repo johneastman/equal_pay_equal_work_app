@@ -1,4 +1,5 @@
 <h1>Employers</h1>
+<p>Below is a list of employers that have had complaints filed against them. Click on the name to view more details about an employer. To file a complaint against an existing employer, click "File Complaint" next to the specific employer. You will have the option to make any changes if the existing information is not the same as your information. If you do not see your employer listed, click "File Complaint Against New Employer".</p>
 <% @employers.each do |employer| %>
 	<section>
 		<%= link_to employer.name, employer_path(employer) %> (<%= link_to "File Complaint", new_employer_path(employer_id: employer.id) %>)

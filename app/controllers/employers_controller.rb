@@ -22,28 +22,20 @@ class EmployersController < ApplicationController
 	def create
 		# Check if the employer object is already in the database. If it is not, save the object
 		# to the employer table.
-		employer = Employer.new(employer_params)
+		@employer = Employer.new(employer_params)
 
-		result = Employer.where([
-			"name = ? AND contact_person_name = ? AND mailing_address = ? AND city = ? AND state = ? AND zipcode = ? AND phone_number = ? AND email_address = ? AND website = ?",
-			employer.name,
-			employer.contact_person_name,
-			employer.mailing_address,
-			employer.city,
-			employer.state,
-			employer.zipcode,
-			employer.phone_number,
-			employer.email_address,
-			employer.website
-		]).first
-
+		result = Employer.existing(@employer)
+	
 		if result.nil?
-			employer.save
+			if @employer.save
+				redirect_to new_employer_complaint_path(@employer)
+			else
+				render :new, status: :unprocessable_entity
+			end
+		else			
+			# Redirect to complaint form for this employer
+			redirect_to new_employer_complaint_path(result)
 		end
-		fail
-		user_id = employer.id
-
-		redirect_to employers_path
 	end
 
 	def edit
@@ -59,7 +51,8 @@ class EmployersController < ApplicationController
 	private
 
 	def employer_params
-		params.require(:employer).permit(
+		# require(:employer).
+		params.permit(
 			:name,
 			:contact_person_name,
 			:mailing_address,

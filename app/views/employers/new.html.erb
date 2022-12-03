@@ -1,5 +1,10 @@
-<h1>Create an Employer</h1>
-<p>For fields where the information is unknown, enter "N/A".</p>
+<% if params[:employer_id].nil? %>
+  <h1>Add Employer Info</h1>
+  <p>For fields where the information is unknown, enter "N/A".</p>
+<% else %>
+  <h1>Update Employer Info</h1>
+  <p>Review the employer information below and make any changes as necessary to ensure the accuracy of your complaint. For fields where the information is unknown, enter "N/A". Click "Next" when you are happy with the information entered.</p>
+<% end %>
 
 <%= render "form", employer: @employer %>
 

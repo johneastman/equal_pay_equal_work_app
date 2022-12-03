@@ -1,48 +1,51 @@
-<%= form_with(model: employer) do |f| %>
+<%= form_with(url: {controller: "employers", action: "create"}) do |f| %>
+
+	<p><%= render "shared/errors", object: employer %></p>
+
 	<p>
 		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, value: get_value(employer, "name") %>
 	</p>
 
 	<p>
 		<%= f.label :contact_person_name %>
-		<%= f.text_field :contact_person_name %>
+		<%= f.text_field :contact_person_name, value: get_value(employer, "contact_person_name") %>
 	</p>
 
 	<p>
 		<%= f.label :mailing_address %>
-		<%= f.text_field :mailing_address %>
+		<%= f.text_field :mailing_address, value: get_value(employer, "mailing_address") %>
 	</p>
 
 	<p>
 		<%= f.label :city %>
-		<%= f.text_field :city %>
+		<%= f.text_field :city, value: get_value(employer, "city") %>
 	</p>
 
 	<p>
 		<%= f.label :state %>
-		<%= f.text_field :state %>
+		<%= f.text_field :state, value: get_value(employer, "state") %>
 	</p>
 
 	<p>
 		<%= f.label :zipcode %>
-		<%= f.text_field :zipcode %>
+		<%= f.text_field :zipcode, value: get_value(employer, "zipcode") %>
 	</p>
 
 	<p>
 		<%= f.label :phone_number %>
-		<%= f.text_field :phone_number %>
+		<%= f.text_field :phone_number, value: get_value(employer, "phone_number") %>
 	</p>
 
 	<p>
 		<%= f.label :email_address %>
-		<%= f.text_field :email_address %>
+		<%= f.text_field :email_address, value: get_value(employer, "email_address") %>
 	</p>
 
 	<p>
 		<%= f.label :website %>
-		<%= f.text_field :website %>
+		<%= f.text_field :website, value: get_value(employer, "website") %>
 	</p>
 
-	<p><%= f.submit %></p>
+	<p><%= f.submit "Next" %></p>
 <% end %>
