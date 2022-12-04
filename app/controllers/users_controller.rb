@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     # because they may want to only submit anonymous forms. If they do decide to submit non-anonymous forms, they will need ti
     # edit/add this info.
     user = User.new(params.require(:user).permit(:email, :password))
-    user.preferred_contact = "Email" # The email is required for login, so this value should initially be set to "Email" 
-		if user.save
+		
+    if user.save
       sign_in(user.id)
       redirect_to user
     else

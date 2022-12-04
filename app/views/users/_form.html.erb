@@ -1,61 +1,67 @@
 <%= form_with(model: user) do |f| %>
 
-  <h3>Login Info</h3>
+  <h3><%= I18n.t("users.form.sections.login_info") %></h3>
 
 	<p>
-		<%= f.label :email %>
+		<%= f.label :email, I18n.t("users.form.labels.email") %>
 		<%= f.text_field :email %>
 	</p>
 
   <p>
-		<%= f.label :password %>
+		<%= f.label :password, I18n.t("users.form.labels.password") %>
 		<%= f.password_field :password %>
 	</p>
 
-  <h3>Personal Contact Info</h3>
+  <h3><%= I18n.t("users.form.sections.contact_info") %></h3>
 	<p>
-		<%= f.label :first_name %>
+		<%= f.label :first_name, I18n.t("users.form.labels.first_name") %>
 		<%= f.text_field :first_name %>
 	</p>
 
 	<p>
-		<%= f.label :last_name %>
+		<%= f.label :last_name, I18n.t("users.form.labels.last_name") %>
 		<%= f.text_field :last_name %>
 	</p>
 
 	<p>
-		<%= f.label :mailing_address %>
+		<%= f.label :mailing_address, I18n.t("users.form.labels.mailing_address") %>
 		<%= f.text_field :mailing_address %>
 	</p>
 
 	<p>
-		<%= f.label :city %>
+		<%= f.label :city, I18n.t("users.form.labels.city") %>
 		<%= f.text_field :city %>
 	</p>
 
 	<p>
-		<%= f.label :state %>
+		<%= f.label :state, I18n.t("users.form.labels.state") %>
 		<%= f.text_field :state %>
 	</p>
 
 	<p>
-		<%= f.label :zipcode %>
+		<%= f.label :zipcode, I18n.t("users.form.labels.zipcode") %>
 		<%= f.text_field :zipcode %>
 	</p>
 
 	<p>
-		<%= f.label :primary_phone %>
+		<%= f.label :primary_phone, I18n.t("users.form.labels.primary_phone") %>
 		<%= f.text_field :primary_phone %>
 	</p>
 
   <p>
-		<%= f.label :alt_phone %>
+		<%= f.label :alt_phone, I18n.t("users.form.labels.alt_phone") %>
 		<%= f.text_field :alt_phone %>
 	</p>
 
 	<p>
 		<%= f.label :preferred_contact %>
-		<%= f.select :preferred_contact, ["Mail", "Phone", "Email"] %>
+		<%= 
+			f.select :preferred_contact, [
+				I18n.t("users.form.labels.preferred_contact_methods.mail"),
+				I18n.t("users.form.labels.preferred_contact_methods.phone"),
+				I18n.t("users.form.labels.preferred_contact_methods.email"),
+			]
+		%>
 	</p>
 
 	<p><%= f.submit %></p>

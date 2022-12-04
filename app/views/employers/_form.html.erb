@@ -3,49 +3,49 @@
 	<p><%= render "shared/errors", object: employer %></p>
 
 	<p>
-		<%= f.label :name %>
+		<%= f.label :name, I18n.t("employers.form.labels.name") %>
 		<%= f.text_field :name, value: get_value(employer, "name") %>
 	</p>
 
 	<p>
-		<%= f.label :contact_person_name %>
+		<%= f.label :contact_person_name, I18n.t("employers.form.labels.contact_person_name") %>
 		<%= f.text_field :contact_person_name, value: get_value(employer, "contact_person_name") %>
 	</p>
 
 	<p>
-		<%= f.label :mailing_address %>
+		<%= f.label :mailing_address, I18n.t("employers.form.labels.mailing_address") %>
 		<%= f.text_field :mailing_address, value: get_value(employer, "mailing_address") %>
 	</p>
 
 	<p>
-		<%= f.label :city %>
+		<%= f.label :city, I18n.t("employers.form.labels.city") %>
 		<%= f.text_field :city, value: get_value(employer, "city") %>
 	</p>
 
 	<p>
-		<%= f.label :state %>
+		<%= f.label :state, I18n.t("employers.form.labels.state") %>
 		<%= f.text_field :state, value: get_value(employer, "state") %>
 	</p>
 
 	<p>
-		<%= f.label :zipcode %>
+		<%= f.label :zipcode, I18n.t("employers.form.labels.zipcode") %>
 		<%= f.text_field :zipcode, value: get_value(employer, "zipcode") %>
 	</p>
 
 	<p>
-		<%= f.label :phone_number %>
+		<%= f.label :phone_number, I18n.t("employers.form.labels.phone_number") %>
 		<%= f.text_field :phone_number, value: get_value(employer, "phone_number") %>
 	</p>
 
 	<p>
-		<%= f.label :email_address %>
+		<%= f.label :email_address, I18n.t("employers.form.labels.email_address") %>
 		<%= f.text_field :email_address, value: get_value(employer, "email_address") %>
 	</p>
 
 	<p>
-		<%= f.label :website %>
+		<%= f.label :website, I18n.t("employers.form.labels.website") %>
 		<%= f.text_field :website, value: get_value(employer, "website") %>
 	</p>
 
-	<p><%= f.submit "Next" %></p>
+	<p><%= f.submit I18n.t("employers.form.submit") %></p>
 <% end %>

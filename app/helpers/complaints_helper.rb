@@ -1,8 +1,8 @@
 module ComplaintsHelper
 	def display_boolean(bool)
 		if bool
-			return "Yes"
+			return I18n.t("main.boolean_display.yes")
     end
-    "No"
+    return I18n.t("main.boolean_display.no")
   end
 end

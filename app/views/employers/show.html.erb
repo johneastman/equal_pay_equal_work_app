@@ -1,21 +1,26 @@
 <h1><%= @employer.name %></h1>
-<h2><%= link_to "File a Complaint", new_employer_complaint_path(@employer) %></h2>
+<h2><%= link_to I18n.t("complaint.file"), new_employer_complaint_path(@employer) %></h2>
 
-<p><strong>Contact Person Name:</strong> <%= @employer.contact_person_name %></p>
+<p><strong><%= I18n.t("complaint.contact_person_name") %>:</strong> <%= @employer.contact_person_name %></p>
 
-<p><strong>Address</strong></p>
-<p><%= @employer.mailing_address %></p>
-<p><%= @employer.city %> <%= @employer.state %>, <%= @employer.zipcode %></p>
+<p>
+  <%= render "shared/address",
+             mailing_address: @employer.mailing_address,
+             city: @employer.city,
+             state: @employer.state,
+             zipcode: @employer.zipcode
+  %>
+</p>
 
-<p><strong>Phone Number:</strong> <%=@employer.phone_number %></p>
-<p><strong>Email:</strong> <%=@employer.email_address %></p>
-<p><strong>Website:</strong> <%=@employer.website %></p>
+<p><strong><%= I18n.t("complaint.phone_number") %>:</strong> <%=@employer.phone_number %></p>
+<p><strong><%= I18n.t("complaint.email") %>:</strong> <%= mail_to @employer.email_address %></p>
+<p><strong><%= I18n.t("complaint.website") %>:</strong> <%=@employer.website %></p>
 
 <% if @complaints.present? %>
-  <p><strong>Complaints</strong></p>
+  <h5><strong><%= I18n.t("employers.complaints.header") %></strong></h5>
   <ul>
   <% @complaints.each do |complaint| %>
-      <li><%= link_to "Complaint ##{complaint.id}", employer_complaint_path(@employer, complaint) %></li>
+      <li><%= link_to I18n.t("complaint.id", id: complaint.id), employer_complaint_path(@employer, complaint) %></li>
   <% end %>
   </ul>
 <% end %>

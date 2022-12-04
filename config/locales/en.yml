@@ -28,6 +28,143 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app:
+    tab_text: Equal Pay for Equal Work
+  
+  main:
+    boolean_display:
+      "yes": "Yes"
+      "no": "No"
+    navigation:
+      back: Back
+      edit: Edit
+      delete: Delete
+  
+  errors:
+    header: Oops! Your form could not be saved.
+    num_errors:
+      one: Please correct the following %{count} error
+      other: Please correct the following %{count} errors
+  
+  header:
+    welcome: Welcome!
+    welcome_name: Welcome, %{first_name}!
+    home: Home
+    sign_in: Sign In
+    sign_up: Sign Up
+    sign_out: Sign Out
+    sign_out_confirm: Are you sure you want to sign out?
+    view_account: View Account
+
+  users:
+    show_user:
+      labels:
+        name: Name
+        email: Email
+        address: Address
+        primary_phone: Primary Phone Number
+        alternate_phone: Alternate Phone Number
+        preferred_contact: Preferred Contact Method
+
+    form:
+      labels:
+        email: Email
+        password: Password
+        first_name: First Name
+        last_name: Last Name
+        mailing_address: Mailing Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        primary_phone: Primary Phone Number
+        alt_phone: Alternate Phone Number
+        preferred_contact_methods:
+          mail: Mail
+          phone: Phone
+          email: Email
+      sections:
+        login_info: Login Info
+        contact_info: Personal Contact Info
+
+    index:
+      header: Users
+      details: Details
+    
+    new:
+      header: Sign Up
+      form:
+        labels:
+          email: Email
+          password: Password
+        submit: Sign Up
+
+    edit:
+      header: Edit User
+    
+    show:
+      edit: Edit
+      delete: Delete
+  
+  session:
+    form:
+      labels:
+        email: Email
+        password: Password
+    sign_in:
+      header: Sign In
+      sign_up: Sign Up
+      sign_up_header: "Don't have an account? %{sign_up}!"
+      login: Login
+    sign_in_success: Welcome Back
+    sign_out_success: You're now signed out!
+    invalid_credentials: Invalid email or password
+  
+  employers:
+    header: Employers
+    description: Below is a list of employers that have had complaints filed against them. Click on the name to view more details about an employer. To file a complaint against an existing employer, click "File Complaint" next to the specific employer. You will have the option to make any changes if the existing information is not the same as your information. If you do not see your employer listed, click "File Complaint Against New Employer".
+    file_complaint: File Complaint
+    file_complaint_new: File Complaint Against New Employer
+    complaints:
+      header: Complaints
+    edit:
+      header: Edit Employer
+      description: For fields where the information is unknown, enter "N/A".
+    new:
+      add_header: Add Employer Info
+      add_description: For fields where the information is unknown, enter "N/A".
+      update_header: Update Employer Info
+      update_description: Review the employer information below and make any changes as necessary to ensure the accuracy of your complaint. For fields where the information is unknown, enter "N/A". Click "Next" when you are happy with the information entered.
+
+    form:
+      labels:
+        name: Employer Name
+        contact_person_name: Contact Person Name
+        mailing_address: Mailing Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        phone_number: Phone Number
+        email_address: Email Address
+        website: Website
+      submit: Next
+
+  complaint:
+    delete_confirm: Are you sure you want to delete this complaint?
+    file: File a Complaint
+    contact_person_name: Contact Person Name
+    address: Address
+    phone_number: Phone Number
+    email: Email
+    website: Website
+    id: "Complaint #%{id}"
+    show:
+      sign_in_generate: "%{sign_in} to generate the complaint form"
+      header: "Details for Complaint #%{id} (%{employer_name})"
+      generate: Generate Complaint Form
+      if_yes_explain: If yes, please explain
+      promotional_opportunities_question: Did the employer fail to notify all current employees of a promotional opportunity (C.R.S § 8-5-201(1)), including a failure to include all required information in a notice or failure to provide the notice in time for employees to apply for the position?
+      compensation_question: Did the employer fail to include compensation and a description of benefits in a job posting (C.R.S § 8-5-201(2)), including a failure to provide an accurate and position-specific compensation and benefits description?
+      history_question: Did the employer fail to keep records of employee job description and wage history for at least two years after an employee’s employment (C.R.S § 8-5-202)?
+      supporting_documentation_title: Supporting Documentation
+      supporting_documentation_description: You should provide the Division with relevant documentation to support your complaint by attaching it to this complaint form. Supporting documentation may include a copy, photo, or screenshot of a non-compliant job posting or notice of promotional opportunity; correspondence with your employer or others concerning a promotional opportunity, hire, or promotion; and/or correspondence with your employer or others concerning employee records. If you do not have supporting documentation, describe in detail any additional information for your allegation that this employer has violated Part 2 of the Equal Pay for Equal Work Act.

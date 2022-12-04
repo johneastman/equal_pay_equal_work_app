@@ -1,16 +1,16 @@
-<h1>Sign In</h1>
-<h5>Don't have an account? <%= link_to "Sign Up!", new_user_path %></h5>
+<h1><%= I18n.t("session.sign_in.header") %></h1>
+<h5><%= I18n.t("session.sign_in.sign_up_header", sign_up: link_to(I18n.t("session.sign_in.sign_up"), new_user_path)).html_safe %></h5>
 
 <%= form_with(url: session_path) do |f| %>
   <p>
-    <%= f.label :email %>
+    <%= f.label :email, I18n.t("session.form.labels.email") %>
     <%= f.text_field :email %>
   </p>
 
   <p>
-    <%= f.label :password %>
+    <%= f.label :password, I18n.t("session.form.labels.password") %>
     <%= f.password_field :password %>
   </p>
 
-  <p><%= f.submit "Login" %></p>
+  <p><%= f.submit I18n.t("session.sign_in.login") %></p>
 <% end %>

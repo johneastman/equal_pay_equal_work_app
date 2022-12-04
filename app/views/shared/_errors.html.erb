@@ -1,11 +1,10 @@
 <% if object.errors.any? %>
   <section class="errors">
     <h2>
-      Oops! Your form could not be saved.
+      <%= I18n.t("errors.header") %>
     </h2>
     <h3>
-      Please correct the following
-      <%= pluralize(object.errors.size, "error") %>:
+      <%= I18n.t("errors.num_errors", count: object.errors.size) %>
     </h3>
     <ul>
       <% object.errors.full_messages.each do |message| %>

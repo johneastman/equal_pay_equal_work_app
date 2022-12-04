@@ -1,7 +1,7 @@
-<h1>Users</h1>
+<h1><%= I18n.t("users.index.header") %></h1>
 <% @users.each do |user| %>
   <p>
     <%= render "show_user", user: user %>
-    <%= link_to "Details", user %>
+    <%= link_to I18n.t("users.index.details"), user %>
   </p>
 <% end %>

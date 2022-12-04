@@ -1,29 +1,30 @@
 <%= form_with(model: [employer, complaint])  do |f| %>
 	<p>
-		<%= f.label :promotional_opportunities %>
+		<%= f.label :promotional_opportunities, I18n.t("complaint.show.promotional_opportunities_question") %>
 		<%= f.check_box :promotional_opportunities %>
 	</p>
 
-	<p><%= f.label :promotional_opportunities_description %></p>
+	<p><%= f.label :promotional_opportunities_description, I18n.t("complaint.show.if_yes_explain") %></p>
 	<p><%= f.text_area :promotional_opportunities_description %></p>
 
 	<p>
-		<%= f.label :compensation %>
+		<%= f.label :compensation, I18n.t("complaint.show.compensation_question") %>
 		<%= f.check_box :compensation %>
 	</p>
 	
-	<p><%= f.label :compensation_description %></p>
+	<p><%= f.label :compensation_description, I18n.t("complaint.show.if_yes_explain") %></p>
 	</p><%= f.text_area :compensation_description %></p>
 
 	<p>
-		<%= f.label :history %>
+		<%= f.label :history, I18n.t("complaint.show.history_question") %>
 		<%= f.check_box :history %>
 	</p>
 	
-	<p><%= f.label :history_description %></p>
+	<p><%= f.label :history_description, I18n.t("complaint.show.if_yes_explain") %></p>
 	<p><%= f.text_area :history_description %></p>
 
-	<p><%= f.label :supporting_documentation %></p>
+	<p><%= f.label :supporting_documentation, I18n.t("complaint.show.supporting_documentation_title") %></p>
+	<p><%= f.label :supporting_documentation, I18n.t("complaint.show.supporting_documentation_description") %></p>
 	<p><%= f.text_area :supporting_documentation %></p>
 
 	<%= f.submit %>

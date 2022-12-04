@@ -1,14 +1,18 @@
-<p><strong>Did the employer fail to notify all current employees of a promotional opportunity (C.R.S § 8-5-201(1)), including a failure to include all required information in a notice or failure to provide the notice in time for employees to apply for the position?</strong> <%= display_boolean(complaint.promotional_opportunities) %></p>
-<p><strong>If yes, please explain:</strong></p>
-<p><%= complaint.promotional_opportunities_description %></p>
+<p><strong><%= I18n.t("complaint.show.promotional_opportunities_question") %></strong> <%= display_boolean(complaint.promotional_opportunities) %></p>
+<% if complaint.promotional_opportunities %>
+  <p><strong><%= I18n.t("complaint.show.if_yes_explain") %>:</strong><br><%= complaint.promotional_opportunities_description %></p>
+<% end %>
 
-<p><strong>Did the employer fail to include compensation and a description of benefits in a job posting (C.R.S § 8-5-201(2)), including a failure to provide an accurate and position-specific compensation and benefits description?</strong> <%= display_boolean(complaint.compensation) %></p>
-<p><strong>If yes, please explain:</strong></p>
-<p><%= complaint.compensation_description %></p>
+<p><strong><%= I18n.t("complaint.show.compensation_question") %></strong> <%= display_boolean(complaint.compensation) %></p>
+<% if complaint.compensation %>
+  <p><strong><%= I18n.t("complaint.show.if_yes_explain") %>:</strong><br><%= complaint.compensation_description %></p>
+<% end %>
 
-<p><strong>Did the employer fail to keep records of employee job description and wage history for at least two years after an employee’s employment (C.R.S § 8-5-202)?</strong> <%= display_boolean(complaint.history) %></p>
-<p><strong>If yes, please explain:</strong></p>
-<p><%= complaint.history_description %></p>
+<p><strong><%= I18n.t("complaint.show.history_question") %></strong> <%= display_boolean(complaint.history) %></p>
+<% if complaint.history %>
+  <p><strong><%= I18n.t("complaint.show.if_yes_explain") %>:</strong><br><%= complaint.history_description %></p>
+<% end %>
 
-<p><strong>Supporting Documentation</strong></p>
-<p><%= complaint.supporting_documentation %></p>
+<% if complaint.supporting_documentation.present? %>
+  <p><strong><%= I18n.t("complaint.show.supporting_documentation_title") %></strong><br><%= complaint.supporting_documentation %></p>
+<% end %>

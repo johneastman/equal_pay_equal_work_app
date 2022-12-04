@@ -56,10 +56,10 @@ user = User.create(
 		history = Faker::Boolean.boolean
 		complaint.history = history
 		if history
-			complaint.compensation_description = get_paragraphs
+			complaint.history_description = get_paragraphs
 		end
 
-		if history
+		if Faker::Boolean.boolean
 			complaint.supporting_documentation = get_paragraphs
 		end
 

@@ -28,17 +28,17 @@ class SessionsController < ApplicationController
 
       # Redirect to intended url if signin is required to view a page. If 'session[:intended_url]' is empty
       # redirect to the employers path
-      redirect_to (session[:intended_url] || employers_path), notice: "Welcome back, #{user.first_name}!"
+      redirect_to (session[:intended_url] || employers_path), notice: "#{I18n.t("session.sign_in_success")}, #{user.first_name}!"
       session[:intended_url] = nil
     else
       # If the email doesn't match an existing user, redisplay the login page because login failed
-      flash.now[:alert] = "Invalid email or password"
+      flash.now[:alert] = I18n.t("session.invalid_credentials")
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     sign_out
-    redirect_to employers_path, status: :see_other, notice: "You're now signed out!"
+    redirect_to employers_path, status: :see_other, notice: I18n.t("session.sign_out_success")
   end
 end
